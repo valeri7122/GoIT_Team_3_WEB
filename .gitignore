@@ -1,0 +1,7 @@
+config.ini
+.idea/
+.env
+__pycache__/
+node_modules/
+fly.toml
+**/.env

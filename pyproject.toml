@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "goit-team-3-web"
+version = "0.1.0"
+description = ""
+authors = ["TT1410 <112493080+TT1410@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.0"
+fastapi-mail = "^1.2.6"
+fastapi-limiter = "^0.1.5"
+python-multipart = "^0.0.6"
+uvicorn = {extras = ["standart"], version = "^0.21.1"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+sqlalchemy = "^2.0.7"
+pydantic = {extras = ["dotenv", "email"], version = "^1.10.7"}
+alembic = "^1.10.2"
+redis = "^4.5.3"
+cloudinary = "^1.32.0"
+libgravatar = "^1.0.4"
+asyncpg = "^0.27.0"
+psycopg2-binary = "^2.9.5"
+qrcode = "^7.4.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.0"
+pytest-asyncio = "^0.21.0"
+httpx = "^0.23.3"
+pytest-mock = "^3.10.0"
+trio = "^0.22.0"
+pytest-cov = "^4.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^6.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+#addopts = "--cov=. --cov-report html tests/"
+#addopts = "-p no:warnings tests/"
+addopts = "-p no:warnings --cov=. tests/"
+omit = [
+    "tests/*",
+    "main.pi",
+    "some/path/*"
+    ]
